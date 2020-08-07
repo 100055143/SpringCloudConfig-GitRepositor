@@ -7,6 +7,6 @@ server:
 zuul:
  ignoredServices: '*'
   routes:
-    logica-diagrama_secuencia:
+    echo-service:
       path: /logica-diagrama_secuencia/**
       url: http://localhost:8091
