@@ -1,14 +1,18 @@
+
 server:
   port: 8080 #the default port used for zuul service
   
+#Option 2: Chapter 5 - Another method is specifying a service-route and configuring a Ribbon client for the serviceId (doing so requires disabling Eureka support in Ribbon)
 zuul:
-  ignoredServices: '*'
-  host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
-    routes:
-      logica-diagrama_secuencia: # Service
-        path: /logica-diagrama_secuencia/** #path that will be intercepted
-        url: http://localhost:8091/logica-diagrama_secuencia/ #which url the request will e mapped to
-        stripPrefix: false  #if zuul should replace the "/sample/" segment
-        sensitiveHeaders:
+  routes:
+    logica-diagrama_secuencia:
+      path: /logica-diagrama_secuencia/**
+      serviceId: LOGICA-DIAGRAMA_SECUENCIA #The name of the service to make the load balancing
+      
+ribbon: # Eureka interface with Ribbon must be disabled so Ribbon will use the list of servers indicated below
+  eureka:
+    enabled: false
+logica-diagrama_secuencia:
+  ribbon:
+    listOfServers: http://localhost:8091,http://localhost:8092
+    # Above is the list of servers and ports where the different instances of the service is deployed, so Ribbon can use them for load balancing
