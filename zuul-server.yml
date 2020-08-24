@@ -5,7 +5,7 @@ server:
 #Option 2: Chapter 5 - Another method is specifying a service-route and configuring a Ribbon client for the serviceId (doing so requires disabling Eureka support in Ribbon)
 zuul:
   routes:
-    logica-diagrama_secuencia:
+    diagrama_secuencia:
       path: /diagrama_secuencia/**
       serviceId: diagrama_secuencia #The name of the service to make the load balancing
       
