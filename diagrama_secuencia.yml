@@ -1,10 +1,10 @@
 # Spring properties
 spring:
   data:
-    mongodb:
-      host: localhost
-      port: 27017
-      uri: mongodb://localhost/test
+      mongodb:
+        user: jchamorro
+        password: jchamorro
+        uri: mongodb://localhost:27017/db_diagrama_secuencia
 
 # HTTP Server
 server:
