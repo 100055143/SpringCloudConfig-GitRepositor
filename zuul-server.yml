@@ -14,5 +14,5 @@ ribbon: # Eureka interface with Ribbon must be disabled so Ribbon will use the l
     enabled: false
 logica-diagrama_secuencia:
   ribbon:
-    listOfServers: http://localhost:8091/,http://localhost:8092/
+    listOfServers: http://localhost:8091,http://localhost:8092
     # Above is the list of servers and ports where the different instances of the service is deployed, so Ribbon can use them for load balancing
