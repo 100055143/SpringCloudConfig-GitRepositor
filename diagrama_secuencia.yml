@@ -1,2 +1,11 @@
+# Spring properties
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      uri: mongodb://localhost/test
+
+# HTTP Server
 server:
   port: ${port:8091}
