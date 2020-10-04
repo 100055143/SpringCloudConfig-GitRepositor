@@ -4,7 +4,7 @@ server:
 zuul:
   routes:
     diagrama_secuencia:
-      path: /diagrama_secuencia/**
+      path: /**
       serviceId: diagrama_secuencia #The name of the service to make the load balancing
       
 ribbon: # Eureka interface with Ribbon must be disabled so Ribbon will use the list of servers indicated below
